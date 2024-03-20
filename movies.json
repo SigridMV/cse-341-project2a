@@ -25,5 +25,68 @@
     "duration_minutes": 178,
     "imdb_rating": 8.8,
     "main_cast": "Elijah Wood"
+  },
+  {
+    "title": "The Dark Knight",
+    "director": "Christopher Nolan",
+    "year": 2008,
+    "genre": "Action, Crime, Drama",
+    "duration_minutes": 152,
+    "imdb_rating": 9.0,
+    "main_cast": "Christian Bale, Heath Ledger, Aaron Eckhart"
+  },
+  {
+    "title": "Pulp Fiction",
+    "director": "Quentin Tarantino",
+    "year": 1994,
+    "genre": "Crime, Drama",
+    "duration_minutes": 154,
+    "imdb_rating": 8.9,
+    "main_cast": "John Travolta, Uma Thurman, Samuel L. Jackson"
+  },
+  {
+    "title": "The Matrix",
+    "director": "The Wachowskis",
+    "year": 1999,
+    "genre": "Action, Sci-Fi",
+    "duration_minutes": 136,
+    "imdb_rating": 8.7,
+    "main_cast": "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss"
+  },
+  {
+    "title": "Schindler's List",
+    "director": "Steven Spielberg",
+    "year": 1993,
+    "genre": "Biography, Drama, History",
+    "duration_minutes": 195,
+    "imdb_rating": 8.9,
+    "main_cast": "Liam Neeson, Ben Kingsley, Ralph Fiennes"
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "director": "Frank Darabont",
+    "year": 1994,
+    "genre": "Drama",
+    "duration_minutes": 142,
+    "imdb_rating": 9.3,
+    "main_cast": "Tim Robbins, Morgan Freeman, Bob Gunton"
+  },
+  {
+    "title": "Inception",
+    "director": "Christopher Nolan",
+    "year": 2010,
+    "genre": "Action, Sci-Fi",
+    "duration_minutes": 148,
+    "imdb_rating": 8.8,
+    "main_cast": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page"
+  },
+  {
+    "title": "Fight Club",
+    "director": "David Fincher",
+    "year": 1999,
+    "genre": "Drama",
+    "duration_minutes": 139,
+    "imdb_rating": 8.8,
+    "main_cast": "Brad Pitt, Edward Norton, Helena Bonham Carter"
   }
 ]

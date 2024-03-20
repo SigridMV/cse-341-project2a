@@ -1,0 +1,46 @@
+//.rest File with Routes
+
+GET https://project2a.onrender.com
+
+### Get all movies
+GET https://project2a.onrender.com/movies
+
+### Get movie by id , 1
+GET https://project2a.onrender.com/movies/65fa781b03c00e5605cf24b5
+
+### Get movie by id,  2
+GET https://project2a.onrender.com/movies/65fa781b03c00e5605cf24b6
+
+### Get movie by id , 3
+GET https://project2a.onrender.com/movies/65fa781b03c00e5605cf24b7
+
+### Create movie
+POST https://project2a.onrender.com/movies HTTP/1.1
+Content-Type: application/json
+
+{
+      "title": "The Shawshank Redemption",
+      "director": "Frank Darabont",
+      "year": 1994,
+      "genre": "Drama",
+      "duration_minutes": 142,
+      "imdb_rating": 9.3,
+      "main_cast": "Tim Robbins"
+}
+
+### PUT contact
+PUT https://project2a.onrender.com/movies/65fa781b03c00e5605cf24b7 HTTP/1.1
+Content-Type: application/json
+
+{
+      "title": "Inception",
+      "director": "Christopher Nolan",
+      "year": 2010,
+      "genre": "Action, Sci-Fi",
+      "duration_minutes": 148,
+      "imdb_rating": 8.8,
+      "main_cast": "Leonardo DiCaprio"
+}
+
+### Delete user
+DELETE https://project2a.onrender.com/movies/65fa781b03c00e5605cf24b5 HTTP/1.1
