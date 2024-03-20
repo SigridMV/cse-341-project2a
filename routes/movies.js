@@ -1,17 +1,35 @@
 //API endpoints
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const moviesController = require("../controllers/movies");
+const {
+  createMovieValidation,
+  updateMovieValidation,
+} = require("../middleware/validate");
 
-const moviesController = require('../controllers/movies');
+const { validationResult } = require('express-validator');
 
-router.get('/', moviesController.getAll);
+const validate = (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    next();
+  };
 
-router.get('/:id', moviesController.getSingle);
+router.get("/", moviesController.getAll);
 
-router.post('/', moviesController.createMovie);
+router.get("/:id", moviesController.getSingle);
 
-router.put('/:id', moviesController.updateMovie);
+router.post("/", createMovieValidation, validate, moviesController.createMovie);
 
-router.delete('/:id', moviesController.deleteMovie);
+router.put(
+  "/:id",
+  updateMovieValidation,
+  validate,
+  moviesController.updateMovie
+);
+
+router.delete("/:id", moviesController.deleteMovie);
 
 module.exports = router;
