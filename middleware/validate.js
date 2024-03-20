@@ -1,22 +1,28 @@
-const { body, param } = require('express-validator');
+const validator = require('../helpers/validate');
 
-exports.createMovieValidation = [
-  body('title').notEmpty().withMessage('Title is required'),
-  body('director').notEmpty().withMessage('Director is required'),
-  body('year').isNumeric().withMessage('Year must be a number'),
-  body('genre').notEmpty().withMessage('Genre is required'),
-  body('duration_minutes').isNumeric().withMessage('Duration must be a number'),
-  body('imdb_rating').isNumeric().withMessage('IMDb rating must be a number'),
-  body('main_cast').isArray().withMessage('Main cast must be an array'),
-];
-
-exports.updateMovieValidation = [
-  param('id').isMongoId().withMessage('Invalid movie ID'),
-  body('title').notEmpty().withMessage('Title is required'),
-  body('director').notEmpty().withMessage('Director is required'),
-  body('year').isNumeric().withMessage('Year must be a number'),
-  body('genre').notEmpty().withMessage('Genre is required'),
-  body('duration_minutes').isNumeric().withMessage('Duration must be a number'),
-  body('imdb_rating').isNumeric().withMessage('IMDb rating must be a number'),
-  body('main_cast').isArray().withMessage('Main cast must be an array'),
-];
+const saveMovie = (req, res, next) => {
+    const validationRule = {
+      title: 'required|string',
+      director: 'required|string',
+      year: 'required|integer',
+      genre: 'required|string',
+      duration_minutes: 'required|integer',
+      imdb_rating: 'required|numeric',
+      main_cast: 'required|string'
+    };
+    validator(req.body, validationRule, {}, (err, status) => {
+      if (!status) {
+        res.status(412).send({
+          success: false,
+          message: 'Validation failed',
+          data: err
+        });
+      } else {
+        next();
+      }
+    });
+  };
+  
+  module.exports = {
+    saveMovie
+  };
