@@ -5,7 +5,7 @@
     "description": "Movies API",
     "version": "1.0.0"
   },
-  "host": "project2a.onrender.com",
+  "host": "project2a.onrender.com", 
   "basePath": "/",
   "schemes": [
     "https"
